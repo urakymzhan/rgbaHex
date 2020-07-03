@@ -20,8 +20,15 @@ export default {
       textDecoration: "none",
       color: "black"
     },
+    "& img": {
+      width: "40px",
+      height: "30px"
+    },
     [sizes.down("xs")]: {
-      display: "none"
+      "& img": {
+        width: "20px",
+        height: "15px"
+      },
     }
   },
   slider: {

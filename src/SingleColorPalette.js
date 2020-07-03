@@ -9,6 +9,7 @@ import styles from "./styles/PaletteStyles";
 class SingleColorPalette extends Component {
   constructor(props) {
     super(props);
+    // shades of single color
     this._shades = this.gatherShades(this.props.palette, this.props.colorId);
     this.state = { format: "hex" };
     this.changeFormat = this.changeFormat.bind(this);

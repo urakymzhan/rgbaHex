@@ -1,5 +1,5 @@
 import sizes from "./sizes";
-import bg from "./bg.svg";
+import bg from "./bg2.svg";
 export default {
   "@global": {
     ".fade-exit": {
@@ -18,10 +18,24 @@ export default {
     /* background by SVGBackgrounds.com */
     backgroundColor: "#394bad",
     backgroundImage: `url(${bg})`,
+    backgroundAttachment: 'fixed',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     overflow: "scroll"
   },
   heading: {
-    fontSize: "2rem"
+    color: "#03a9f4",
+    fontSize: "2rem",
+    "&:first-letter": {
+      color: "#fff"
+    }
+  },
+  btn: {
+    backgroundColor: "#03a9f4!important",
+    "& .MuiButton-label-2 a": {
+      color: '#fff9c4',
+      textDecoration: "none",
+    }
   },
   container: {
     width: "50%",

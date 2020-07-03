@@ -1,9 +1,6 @@
 export default {
   root: {
-    backgroundColor: "white",
-    border: "1px solid black",
-    borderRadius: "5px",
-    padding: "0.5rem",
+    backgroundColor: "transparent",
     position: "relative",
     overflow: "hidden",
     cursor: "pointer",
@@ -12,7 +9,7 @@ export default {
     }
   },
   colors: {
-    backgroundColor: "#dae1e4",
+    backgroundColor: "transparent",
     height: "150px",
     width: "100%",
     borderRadius: "5px",
@@ -23,7 +20,8 @@ export default {
     justifyContent: "space-between",
     alignItems: "center",
     margin: "0",
-    color: "black",
+    color: "#fff9c4",
+    fontWeight: "900",
     paddingTop: "0.5rem",
     fontSize: "1rem",
     position: "relative"
@@ -33,22 +31,22 @@ export default {
     fontSize: "1.5rem"
   },
   miniColor: {
-    height: "25%",
-    width: "20%",
+    height: "50%",
+    width: "10%",
     display: "inline-block",
     margin: "0 auto",
     position: "relative",
     marginBottom: "-3.5px"
   },
   deleteIcon: {
-    color: "white",
+    color: "#8bc34a",
     backgroundColor: "#eb3d30",
     width: "20px",
     height: "20px",
     position: "absolute",
-    right: "0px",
+    right: "0",
     top: "0px",
-    padding: "10px",
+    padding: "5px",
     zIndex: 10,
     opacity: 0
   }

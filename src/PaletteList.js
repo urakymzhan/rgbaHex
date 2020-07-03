@@ -9,6 +9,7 @@ import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
+import Button from "@material-ui/core/Button";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { withStyles } from "@material-ui/styles";
 import MiniPalette from "./MiniPalette";
@@ -42,14 +43,22 @@ class PaletteList extends Component {
     this.closeDialog();
   }
   render() {
+    // palletes from App, styles from withStyles HOC
     const { palettes, classes } = this.props;
     const { openDeleteDialog } = this.state;
+    console.log("props", this.props)
     return (
       <div className={classes.root}>
         <div className={classes.container}>
           <nav className={classes.nav}>
-            <h1 className={classes.heading}>React Colors</h1>
-            <Link to='/palette/new'>Create Palette</Link>
+            <h1 className={classes.heading}>RgbHex</h1>
+            <Button
+              className={classes.btn}
+              variant="contained" 
+              color="secondary"
+            >
+              <Link to='/palette/new'>create</Link>
+            </Button>
           </nav>
           <TransitionGroup className={classes.palettes}>
             {palettes.map(palette => (

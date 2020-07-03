@@ -115,7 +115,7 @@ class NewPaletteForm extends Component {
           <Divider />
           <div className={classes.container}>
             <Typography variant='h4' gutterBottom>
-              Design Your Palette
+              Pick A Color
             </Typography>
             <div className={classes.buttons}>
               <Button
@@ -124,7 +124,7 @@ class NewPaletteForm extends Component {
                 onClick={this.clearColors}
                 className={classes.button}
               >
-                Clear Palette
+                Clear All
               </Button>
               <Button
                 variant='contained'

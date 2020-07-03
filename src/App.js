@@ -81,6 +81,7 @@ class App extends Component {
                   path='/'
                   render={routeProps => (
                     <Page>
+                      {console.log(routeProps)}
                       <PaletteList
                         palettes={this.state.palettes}
                         deletePalette={this.deletePalette}

@@ -9,19 +9,17 @@ import CloseIcon from "@material-ui/icons/Close";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import styles from "./styles/NavbarStyles";
-
+import home from './styles/home.png'
 class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = { format: "hex", open: false };
-    this.handleFormatChange = this.handleFormatChange.bind(this);
-    this.closeSnackbar = this.closeSnackbar.bind(this);
   }
-  handleFormatChange(e) {
+  handleFormatChange = (e) => {
     this.setState({ format: e.target.value, open: true });
     this.props.handleChange(e.target.value);
   }
-  closeSnackbar() {
+  closeSnackbar = () => {
     this.setState({ open: false });
   }
   render() {
@@ -30,11 +28,13 @@ class Navbar extends Component {
     return (
       <header className={classes.Navbar}>
         <div className={classes.logo}>
-          <Link to='/'>reactcolorpicker</Link>
+          <Link to='/'>
+            <img src={home} alt="go home" />
+          </Link>
         </div>
         {showingAllColors && (
           <div>
-            <span>Level: {level}</span>
+            <span>Tone level: {level}</span>
             <div className={classes.slider}>
               <Slider
                 defaultValue={level}

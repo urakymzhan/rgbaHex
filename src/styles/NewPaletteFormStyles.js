@@ -1,4 +1,5 @@
 import { DRAWER_WIDTH } from "../constants";
+import sizes from './sizes';
 const drawerWidth = DRAWER_WIDTH;
 
 const styles = theme => ({
@@ -31,7 +32,10 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
-    marginLeft: -drawerWidth
+    marginLeft: -drawerWidth,
+    [sizes.down("sm")]: {
+      marginTop: "15px",
+    }
   },
   contentShift: {
     transition: theme.transitions.create("margin", {
@@ -41,18 +45,25 @@ const styles = theme => ({
     marginLeft: 0
   },
   container: {
-    width: "90%",
+    width: "100%",
+    margin: "0 auto",
     height: "100%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    [sizes.down("sm")]: {
+      padding: "0 35px 0 10px",
+    }
   },
   buttons: {
-    width: "100%"
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-evenly"
   },
   button: {
-    width: "50%"
+    width: "40%",
+    fontSize: "12px"
   }
 });
 
