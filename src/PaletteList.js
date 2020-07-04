@@ -15,6 +15,7 @@ import { withStyles } from "@material-ui/styles";
 import MiniPalette from "./MiniPalette";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
+import Typical from 'react-typical';
 import styles from "./styles/PaletteListStyles";
 
 class PaletteList extends Component {
@@ -46,7 +47,30 @@ class PaletteList extends Component {
     // palletes from App, styles from withStyles HOC
     const { palettes, classes } = this.props;
     const { openDeleteDialog } = this.state;
-    console.log("props", this.props)
+
+    let miniPalettesList = (
+      <TransitionGroup className={classes.palettes}>
+        {palettes.map(palette => (
+          <CSSTransition key={palette.id} classNames='fade' timeout={500}>
+            <MiniPalette
+              {...palette}
+              goToPalette={this.goToPalette}
+              openDialog={this.openDialog}
+              key={palette.id}
+              id={palette.id}
+            />
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
+    )
+    if (palettes.length === 0) {
+      miniPalettesList = <Typical
+        steps={['Bingoo!', 1000, 'No Palletes. Please create one!', 500]}
+        loop={Infinity}
+        wrapper="h1"
+        className={classes.nopalettes}
+      />
+    }
     return (
       <div className={classes.root}>
         <div className={classes.container}>
@@ -54,25 +78,13 @@ class PaletteList extends Component {
             <h1 className={classes.heading}>RgbHex</h1>
             <Button
               className={classes.btn}
-              variant="contained" 
+              variant="contained"
               color="secondary"
             >
               <Link to='/palette/new'>create</Link>
             </Button>
           </nav>
-          <TransitionGroup className={classes.palettes}>
-            {palettes.map(palette => (
-              <CSSTransition key={palette.id} classNames='fade' timeout={500}>
-                <MiniPalette
-                  {...palette}
-                  goToPalette={this.goToPalette}
-                  openDialog={this.openDialog}
-                  key={palette.id}
-                  id={palette.id}
-                />
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
+          {miniPalettesList}
         </div>
         <Dialog
           open={openDeleteDialog}

@@ -21,7 +21,7 @@ export default {
     backgroundAttachment: 'fixed',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    overflow: "scroll"
+    overflow: "scroll",
   },
   heading: {
     color: "#03a9f4",
@@ -73,5 +73,10 @@ export default {
       gridTemplateColumns: "repeat(1, 100%)",
       gridGap: "1.4rem"
     }
+  },
+  nopalettes: {
+    color: '#fff9c4',
+    alignSelf: "center",
+
   }
 };
